@@ -16,12 +16,18 @@ var lightTheme = ThemeData(
   textTheme: TextTheme(
     bodyLarge: TextStyle(
       fontSize: 18,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w600,
     ),
     bodyMedium: TextStyle(
       fontSize: 15,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w500,
     ),
     bodySmall: TextStyle(
       fontSize: 12,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w400,
     ),
   ),
 );
