@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mp_tictactoc/Configs/AssetsPath.dart';
 
 class Roompage extends StatelessWidget {
   const Roompage({super.key});
@@ -13,8 +15,51 @@ class Roompage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("play With Private Room"),
+                SvgPicture.asset(IconsPth.backIcon),
+                SizedBox(width: 15),
+                Text(
+                  "play With Private Room",
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
               ],
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Enter Private Code And Join With Your Friend eg in Gambia',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(color: Theme.of(context).colorScheme.primary),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                fillColor: Theme.of(context).colorScheme.primaryContainer,
+                filled: true,
+                hintText: "Enter Code Now",
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              height: 70,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'join us',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.primaryContainer),
+                  ),
+                ],
+              ),
             )
           ],
         ),

@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:mp_tictactoc/Configs/Colors.dart';
-// Remove or correct this import
-// import 'package:m';
 
-var lightTheme = ThemeData(
+final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
+  inputDecorationTheme: InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+      borderSide: BorderSide.none,
+    ),
+    fillColor: containerColor,
+    filled: true,
+    hintStyle: TextStyle(
+      fontSize: 15,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w400,
+      color: lableColor,
+    ),
+  ),
   colorScheme: ColorScheme.light(
-    primary: Colors.blue, // Replace with your desired color
-    secondary: Colors.green, // Replace with your desired color
-    background: Colors.white, // Replace with your desired color
-    onBackground: Colors.black, // Replace with your desired color
+    primary: Colors.blue,
+    secondary: Colors.green,
+    surface: Colors.white,
+    onSurface: Colors.black,
     primaryContainer: Colors.lightBlue,
-    onPrimaryContainer: lableColor, // Replace with your desired color
+    onPrimaryContainer: lableColor,
   ),
   textTheme: TextTheme(
     bodyLarge: TextStyle(
@@ -28,6 +40,12 @@ var lightTheme = ThemeData(
       fontSize: 12,
       fontFamily: "Poppins",
       fontWeight: FontWeight.w400,
+    ),
+    labelMedium: TextStyle(
+      fontSize: 15,
+      fontFamily: "Poppins",
+      fontWeight: FontWeight.w400,
+      color: lableColor,
     ),
   ),
 );
