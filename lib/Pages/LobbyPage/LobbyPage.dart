@@ -10,6 +10,7 @@ class Lobbypage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController roomCode = TextEditingController(text: "13423");
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -26,47 +27,73 @@ class Lobbypage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 40),
-            Text(
-              'Enter Private Code And Join With Your Friend',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(color: Theme.of(context).colorScheme.primary),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                fillColor: Theme.of(context).colorScheme.primaryContainer,
-                filled: true,
-                hintText: "Enter Code Now",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
             SizedBox(height: 20),
-            Primarybutton(
-              buttonText: "Join Now",
-              onTap: () {},
-            ),
-            SizedBox(height: 80),
-            Text(
-              'Please Create A Private Room',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(color: Theme.of(context).colorScheme.primary),
-            ),
-            Spacer(),
-            Primarybutton(
-              buttonText: "Create Room",
-              onTap: () {
-                Get.to(Lobbypage());
-              },
-            ),
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("Generated Room Code"),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: TextFormField(
+                                controller: roomCode,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  letterSpacing: 1.9,
+                                ),
+                                decoration: InputDecoration(
+                                    fillColor: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                    filled: true,
+                                    border: UnderlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide.none,
+                                    )),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              padding: EdgeInsets.all(13),
+                              height: 70,
+                              width: 70,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                              child: SvgPicture.asset(IconsPth.coinIcon),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "Share This Private code with your Friends & Ask Them To Join The Game.",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(
+                                  color: Theme.of(context).colorScheme.primary),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
