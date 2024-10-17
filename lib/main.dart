@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tic Tac Toe mp',
       theme: lightTheme,
-      home: const Roompage(),
+      home: const RoomPage(),
     );
   }
 }
