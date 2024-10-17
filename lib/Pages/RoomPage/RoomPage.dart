@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:mp_tictactoc/Components/primaryButton.dart';
 import 'package:mp_tictactoc/Configs/AssetsPath.dart';
+import 'package:mp_tictactoc/Pages/LobbyPage/LobbyPage.dart';
 
 class RoomPage extends StatelessWidget {
   const RoomPage({super.key});
@@ -61,7 +63,9 @@ class RoomPage extends StatelessWidget {
             Spacer(),
             Primarybutton(
               buttonText: "Create Room",
-              onTap: () {},
+              onTap: () {
+                Get.to(Lobbypage());
+              },
             ),
           ],
         ),
