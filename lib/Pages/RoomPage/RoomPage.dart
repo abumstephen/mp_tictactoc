@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mp_tictactoc/Components/primaryButton.dart';
 import 'package:mp_tictactoc/Configs/AssetsPath.dart';
 
-class Roompage extends StatelessWidget {
-  const Roompage({super.key});
+class RoomPage extends StatelessWidget {
+  const RoomPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +17,16 @@ class Roompage extends StatelessWidget {
             Row(
               children: [
                 SvgPicture.asset(IconsPth.backIcon),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 Text(
-                  "play With Private Room",
+                  "Play With Private Room",
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             Text(
-              'Enter Private Code And Join With Your Friend eg in Gambia',
+              'Enter Private Code And Join With Your Friend',
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
@@ -39,11 +40,29 @@ class Roompage extends StatelessWidget {
                 filled: true,
                 hintText: "Enter Code Now",
                 border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide.none),
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
+            Primarybutton(
+              buttonText: "Join Now",
+              onTap: () {},
+            ),
+            SizedBox(height: 80),
+            Text(
+              'Please Create A Private Room',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(color: Theme.of(context).colorScheme.primary),
+            ),
+            Spacer(),
+            Primarybutton(
+              buttonText: "Create Room",
+              onTap: () {},
+            ),
           ],
         ),
       ),
